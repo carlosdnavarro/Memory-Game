@@ -26,7 +26,7 @@
 
         	<span class="moves">0</span> Move(s)
 
-            <div class="gameclock"> <!-- changed class from timer to gameclock -->
+            <div class="gameclock">
             </div>
 
             <div class="restart" onclick=startGame()>
@@ -34,74 +34,58 @@
         	</div>
         </section>
 
-        <ul class="deck" id="deckofcards"> <!-- changed class from card-deck to deckofcards -->
-            <li class="card" type="diamond">
+        <ul class="deck" id="deckofcards">
+            <li class="card">
                 <i class="fa fa-diamond"></i>
             </li>
-            <li class="card" type="paperplane">
+            <li class="card">
                 <i class="fa fa-paper-plane-o"></i>
             </li>
-            <li class="card match" type="anchor">
+            <li class="card match">
                 <i class="fa fa-anchor"></i>
             </li>
-            <li class="card" type="bolt">
+            <li class="card">
                 <i class="fa fa-bolt"></i>
             </li>
-            <li class="card" type="cube">
+            <li class="card">
                 <i class="fa fa-cube"></i>
             </li>
-            <li class="card match" type="anchor">
+            <li class="card match">
                 <i class="fa fa-anchor"></i>
             </li>
-            <li class="card" type="leaf">
+            <li class="card">
                 <i class="fa fa-leaf"></i>
             </li>
-            <li class="card" type="bicycle">
+            <li class="card">
                 <i class="fa fa-bicycle"></i>
             </li>
-            <li class="card" type="diamond">
+            <li class="card">
                 <i class="fa fa-diamond"></i>
             </li>
-            <li class="card" type="bomb">
+            <li class="card">
                 <i class="fa fa-bomb"></i>
             </li>
-            <li class="card" type="leaf">
+            <li class="card">
                 <i class="fa fa-leaf"></i>
             </li>
-            <li class="card" type="bomb">
+            <li class="card">
                 <i class="fa fa-bomb"></i>
             </li>
-            <li class="card open show" type="bolt">
+            <li class="card open show">
                 <i class="fa fa-bolt"></i>
             </li>
-            <li class="card" type="bicycle">
+            <li class="card">
                 <i class="fa fa-bicycle"></i>
             </li>
-            <li class="card" type="paperplane">
+            <li class="card">
                 <i class="fa fa-paper-plane-o"></i>
             </li>
-            <li class="card" type="cube">
+            <li class="card">
                 <i class="fa fa-cube"></i>
             </li>
+           
         </ul>
 
-        <div id="popup1" class="overlay">
-            <div class="popup">
-                <h2>Congratulations!</h2>
-                <a class="close" href=# >x</a>
-                <div class="content">
-                    Good job! You won!
-                </div>
-                <div class="content">
-                    <p>You made <span id=finalMove> </span> moves </p>
-                    <p>in  <span id=totalTime> </span>. </p>
-                    <p>Rating: <span id=starRating></span></p>
-                </div>
-                <button id="playagain"onclick="playAgain()">
-                Try again!
-                </button>
-            </div>
-        </div>
 
 
     </div>
