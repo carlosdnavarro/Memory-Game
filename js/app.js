@@ -26,6 +26,13 @@ var starsRating = document.querySelector(".stars")
 var movesCounter = document.querySelector(".moves")
 moves = 0;
 
+var gameClock = document.querySelector(".gameclock")
+
+var timer;
+	timeInSeconds = 0;
+
+var firstClick = true;
+
 var flippedCards = [];
 
 var cardPairs = 0;
@@ -85,11 +92,15 @@ function startGame (card) {
 // cards (flippedCards) to check if both match
 function reveal (card) {		
 	card.addEventListener("click", function() {
+		if (firstClick) {
+			startClock();
+			firstClick = false;
+		}
 		if (flippedCards.length === 1) {
 			card.classList.add("open", "show", "disabled")
 			flippedCards.push(this);
 			checkForMatch();			
-		} else {
+		} else if (flippedCards.length === 0) {
 			card.classList.add("open", "show", "disabled")
 			flippedCards.push(this); 
 				
@@ -131,7 +142,7 @@ function noMatch() {
 		flippedCards[0].classList.remove("open", "show", "disabled");
 		flippedCards[1].classList.remove("open", "show", "disabled");
 		flippedCards.length = 0;			
-	}, 500);
+	}, 850);
 }
 
 
@@ -140,6 +151,7 @@ function noMatch() {
 function youWin() {
 	if (cardPairs === deck_of_cards.length/2) {
 		setTimeout(function() {
+			resetClock()
 			if (moves <= 10) {
 				alert("Congratulations! \nYou won with " + moves + " moves for a rating of three stars!");
 			}
@@ -172,13 +184,33 @@ function score() {
 		starsRating.innerHTML = `<li><i class="fa fa-star"></i></li>`;
 }
 
+//Game Clock
+
+function startClock() {
+	timer = setInterval(function() {
+		timeInSeconds++;
+		gameClock.innerHTML = timeInSeconds + " seconds";
+	}, 1000);
+}
+
+function resetClock() {
+	clearInterval(timer);
+	timeInSeconds = 0;
+
+}
+
 // Deletes all cards from arrays except for the deck, resets all counters to zero, and restarts game
 // Modified from https://github.com/elharony/Udacity-Study-Jam-FEND-P3-Memory-Game/blob/master/js/app.js
 var restartButton = document.querySelector(".restart");
 restartButton.addEventListener("click", function() {
 	cardGrid.innerHTML = "";
+	firstClick = true;
+	resetClock()
+	timeInSeconds = 0;
 	moves = 0;
+	flippedCards.length = 0
 	movesCounter.innerHTML = moves;
+	gameClock.innerHTML = 0 + " seconds";
 	cardPairs.length = 0;
 	starsRating.innerHTML = `<li><i class="fa fa-star"></i></li>
         		<li><i class="fa fa-star"></i></li>
