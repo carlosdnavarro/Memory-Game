@@ -37,6 +37,8 @@ var flippedCards = [];
 
 var cardPairs = 0;
 
+var modal = document.getElementById("popup1");
+
 
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -148,26 +150,64 @@ function noMatch() {
 
 // Function 6: Checks if player has won by comparing the variable cardPairs to half the length of the
 // deck_of_cards array and sends out an corresponding alert. 
+
+/*
 function youWin() {
 	if (cardPairs === deck_of_cards.length/2) {
 		setTimeout(function() {
 			resetClock()
 			if (moves <= 10) {
-				alert("Congratulations! \nYou won with " + moves + " moves for a rating of three stars!");
+				var congrats = confirm("Congratulations! \nYou won with " + moves + " moves for a rating of three stars!\n\nWould you like to try again?");
+				if (congrats==true) {
+					reset();
+				}
 			}
 
 			else if (moves <= 15) {
-				alert("Congratulations! \nYou won with " + moves + " moves for a rating of two stars!");
+				var congrats = confirm("Congratulations! \nYou won with " + moves + " moves for a rating of two stars!\n\nWould you like to try again?");
+				if (congrats==true) {
+					reset();
+				}
 			}
 
 			else 
-				alert("Congratulations! \nYou won with " + moves + " moves for a rating of one star!");
+				var congrats = confirm("Congratulations! \nYou won with " + moves + " moves for a rating of one star!\n\nWould you like to try again?");
+				if (congrats==true) {
+					reset();
+				}
 			
 		}, 500);
 		
 	}
 }
+*/
 
+function youWin() {
+	if (cardPairs === deck_of_cards.length/2) {
+		setTimeout(function() {
+			clearInterval(timer);
+			totalTime = gameClock.innerHTML;
+
+			modal.classList.add("show");
+
+
+			document.getElementById("finalMove").innerHTML = moves;
+			document.getElementById("totalTime").innerHTML = totalTime;
+			document.getElementById("starRating").innerHTML = starsRating.innerHTML;
+		})
+	}
+}
+
+var modalPlayAgainButton = document.querySelector("#play-again")
+modalPlayAgainButton.addEventListener("click", function() {
+	modal.classList.remove("show");
+	reset();
+});
+
+var modalCloseButton = document.querySelector(".close");
+modalCloseButton.addEventListener("click", function() {
+	modal.classList.remove("show")
+});
 
 // Changes the score in real time as the player clicks away.
 function score() {
@@ -203,6 +243,10 @@ function resetClock() {
 // Modified from https://github.com/elharony/Udacity-Study-Jam-FEND-P3-Memory-Game/blob/master/js/app.js
 var restartButton = document.querySelector(".restart");
 restartButton.addEventListener("click", function() {
+	reset();	
+});
+
+function reset() {
 	cardGrid.innerHTML = "";
 	firstClick = true;
 	resetClock()
@@ -217,6 +261,6 @@ restartButton.addEventListener("click", function() {
         		<li><i class="fa fa-star"></i></li>`
 	startGame();
 	
-});
+}
 
 startGame();
