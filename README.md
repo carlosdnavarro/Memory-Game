@@ -6,8 +6,9 @@ This is a simple memory game to test your memory. Eight pairs of cards are rando
 ## Table of Contents
 
 * [Installation Instructions](#installationinstructions)
+* [Dependencies](#dependencies)
 * [How to Play](#howtoplay)
-* [Recent Changes and Bug Fices](#changesandfixes)
+* [Recent Changes and Bug Fixes](#changesandfixes)
 * [Contributing](#contributing)
 
 ## Installation Instructions
@@ -17,6 +18,16 @@ Unzip all the files to the same directory. Make sure that the following folders 
 css\app.css
 js\app.js
 img\geometry2.png
+
+## Dependencies
+
+This game is dependent upon Bootstrap and Google Fonts.
+
+```
+<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+<link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+```
 
 ## How to Play
 
