@@ -151,53 +151,6 @@ function noMatch() {
 // Function 6: Checks if player has won by comparing the variable cardPairs to half the length of the
 // deck_of_cards array and sends out an corresponding alert. 
 
-/*
-function youWin() {
-	if (cardPairs === deck_of_cards.length/2) {
-		setTimeout(function() {
-			resetClock()
-			if (moves <= 10) {
-				var congrats = confirm("Congratulations! \nYou won with " + moves + " moves for a rating of three stars!\n\nWould you like to try again?");
-				if (congrats==true) {
-					reset();
-				}
-			}
-
-			else if (moves <= 15) {
-				var congrats = confirm("Congratulations! \nYou won with " + moves + " moves for a rating of two stars!\n\nWould you like to try again?");
-				if (congrats==true) {
-					reset();
-				}
-			}
-
-			else 
-				var congrats = confirm("Congratulations! \nYou won with " + moves + " moves for a rating of one star!\n\nWould you like to try again?");
-				if (congrats==true) {
-					reset();
-				}
-			
-		}, 500);
-		
-	}
-}
-*/
-
-function youWin() {
-	if (cardPairs === deck_of_cards.length/2) {
-		setTimeout(function() {
-			clearInterval(timer);
-			totalTime = gameClock.innerHTML;
-
-			modal.classList.add("show");
-
-
-			document.getElementById("finalMove").innerHTML = moves;
-			document.getElementById("totalTime").innerHTML = totalTime;
-			document.getElementById("starRating").innerHTML = starsRating.innerHTML;
-		})
-	}
-}
-
 var modalPlayAgainButton = document.querySelector("#play-again")
 modalPlayAgainButton.addEventListener("click", function() {
 	modal.classList.remove("show");
@@ -208,6 +161,58 @@ var modalCloseButton = document.querySelector(".close");
 modalCloseButton.addEventListener("click", function() {
 	modal.classList.remove("show")
 });
+
+function youWin() {
+	if (cardPairs === deck_of_cards.length/2) {
+		console.log("You win!")
+		setTimeout(function() {
+			clearInterval(timer);
+			totalTime = gameClock.innerHTML;
+
+			modal.classList.add("show");
+
+
+			document.getElementById("finalMove").innerHTML = moves;
+			document.getElementById("totalTime").innerHTML = totalTime;
+			document.getElementById("starRating").innerHTML = starsRating.innerHTML;
+		}, 500);
+	}
+}
+
+
+
+
+/*
+function youWin() {
+	if (cardPairs === deck_of_cards.length/2) {
+		setTimeout(function() {
+			resetClock()
+			if (moves <= 10) {
+				var congrats = confirm("Congratulations! \nYou won with " + moves + " moves in " + totalTime + " seconds for a rating of three stars!\n\nWould you like to try again?");
+				if (congrats==true) {
+					reset();
+				}
+			}
+
+			else if (moves <= 15) {
+				var congrats = confirm("Congratulations! \nYou won with " + moves + " moves in " + totalTime + " seconds for a rating of two stars!\n\nWould you like to try again?");
+				if (congrats==true) {
+					reset();
+				}
+			}
+
+			else 
+				var congrats = confirm("Congratulations! \nYou won with " + moves + " moves in " + totalTime + " seconds for a rating of one star!\n\nWould you like to try again?");
+				if (congrats==true) {
+					reset();
+				}
+			
+		}, 500);
+		
+	}
+}
+*/
+
 
 // Changes the score in real time as the player clicks away.
 function score() {
@@ -252,7 +257,7 @@ function reset() {
 	resetClock()
 	timeInSeconds = 0;
 	moves = 0;
-	flippedCards.length = 0
+	flippedCards = [];
 	movesCounter.innerHTML = moves;
 	gameClock.innerHTML = 0 + " seconds";
 	cardPairs.length = 0;
