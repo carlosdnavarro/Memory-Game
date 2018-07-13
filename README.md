@@ -19,6 +19,8 @@ css\app.css
 js\app.js
 img\geometry2.png
 
+Or if you're on a mobile phone or tablet, you can click [here](https://htmlpreview.github.io/?https://github.com/carlosdnavarro/Memory-Game/blob/master/index.html) for a live preview.
+
 ## Dependencies
 
 This game is dependent upon Bootstrap and Google Fonts.
