@@ -38,10 +38,9 @@ h1 {
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
+    width: 85%;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-    padding: 32px;
+    padding: 1rem;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
@@ -52,8 +51,8 @@ h1 {
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
+    height: 3.5rem;
+    width: 3.5rem;
     background: #2e3d49;
     font-size: 0;
     color: #ffffff;
@@ -63,6 +62,7 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    margin: 7px
 }
 
 .deck .card.open {
@@ -82,11 +82,11 @@ h1 {
     cursor: default;
     background: #02ccba;
     font-size: 33px;
-    animation-name: bounce; /* changed from rubberBand */
+    animation-name: bounce;
     animation-duration: 0.8s;
 }
 
-.deck .card.notMatched { /* change unmatched to nomatch */
+.deck .card.notMatched {
     animation-name: shake;
     animation-duration: 0.8s;
     background: #e2043b;
@@ -143,6 +143,8 @@ h1 {
     bottom: 0;
     left: 0;
     right: 0;
+    height: 100%;
+    width: 100%;
     background: rgba(0, 0, 0, 0.7);
     transition: opacity 500ms;
     visibility: hidden;
@@ -249,4 +251,36 @@ h1 {
   0%, 100% {transform: translateX(0);}
   10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
   20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+
+@media (max-width: 320px) {
+    .deck {
+        width: 85%;
+    }
+
+    .deck .card {
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        font-size: 22px;
+    }
+
+    .deck {
+        width: 660px;
+        height: 680px;
+    }
+
+    .deck .card {
+        height: 125px;
+        width: 125px;
+    }
+
+    .popup {
+        width: 60%;
+    }
 }
