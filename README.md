@@ -39,12 +39,18 @@ Click on cards/tiles to reveal them. Find the eight (8) pairs in the fewest move
 
 June 21, 2018 
 
-– fixed issue with restart not clearing the flippedCards array
-– fixed an issue where you could add three cards to the flippedCards array
+– fixed issue with restart not clearing the flippedCards array.
+– fixed an issue where you could add three cards to the flippedCards array.
 
 June 27, 2018
 
-– added a timer and integrated that to the restart button
+– added a timer and integrated that to the restart button.
+
+July 16, 2018
+
+- Added instructions for a live preview for use with mobile devices.
+- Added media queries.
+- Switched congratulations message to use JS alert function.
 
 
 ## Contributing
