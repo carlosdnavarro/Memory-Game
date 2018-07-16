@@ -159,7 +159,7 @@ h1 {
 .popup {
     margin: 80px auto;
     padding: 25px;
-    background: #ffffff; /* Edit! */
+    background: #ffffff; 
     border-radius: 5px;
     width: 30%;
     position: relative;
@@ -183,7 +183,7 @@ h1 {
 }
 
 .popup .close:hover {
-    color: #E5F720; /* Edit! */
+    color: #E5F720; /
 }
 
 .popup .content {
@@ -254,7 +254,9 @@ h1 {
 }
 
 
-@media (max-width: 320px) {
+/*Media Queries*/
+
+@media (max-width: 350px) {
     .deck {
         width: 85%;
     }
@@ -265,7 +267,7 @@ h1 {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 700px) {
     .container {
         font-size: 22px;
     }
@@ -281,6 +283,6 @@ h1 {
     }
 
     .popup {
-        width: 60%;
+        width: 50%;
     }
 }
