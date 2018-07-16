@@ -151,6 +151,7 @@ function noMatch() {
 // Function 6: Checks if player has won by comparing the variable cardPairs to half the length of the
 // deck_of_cards array and sends out an corresponding alert. 
 
+/*
 var modalPlayAgainButton = document.querySelector("#play-again")
 modalPlayAgainButton.addEventListener("click", function() {
 	modal.classList.remove("show");
@@ -178,12 +179,13 @@ function youWin() {
 		}, 500);
 	}
 }
+*/
 
 
 
 
-/*
 function youWin() {
+	totalTime = gameClock.innerHTML;
 	if (cardPairs === deck_of_cards.length/2) {
 		setTimeout(function() {
 			resetClock()
@@ -211,7 +213,7 @@ function youWin() {
 		
 	}
 }
-*/
+
 
 
 // Changes the score in real time as the player clicks away.
